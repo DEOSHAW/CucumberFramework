@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="SeleniumAutomation">
+ <test name="Selenium">
+ <classes>
+ <class name="winiumTest.WiniumTestDemo2" />
+ <class name="winiumTest.WiniumTestDemo" />
+ <class name="winiumTest.Demo" />
+ </classes>
+ </test>
+</suite>
