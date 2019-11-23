@@ -26,7 +26,7 @@ public class FacebookSignup {
 		WebDriver driver=new ChromeDriver();
 		driver.navigate().to("https://www.facebook.com/");
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
 		Actions builder=new Actions(driver);
 		
 		WebDriverWait wait=new WebDriverWait(driver,5);
