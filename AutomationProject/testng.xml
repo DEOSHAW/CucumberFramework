@@ -2,9 +2,7 @@
 <suite name="SeleniumAutomation">
  <test name="Selenium">
  <classes>
- <class name="winiumTest.WiniumTestDemo2" />
- <class name="winiumTest.WiniumTestDemo" />
- <class name="winiumTest.Demo" />
+ <class name="winiumTest.FileHandling" />
  </classes>
  </test>
 </suite>

@@ -24,6 +24,7 @@ public class TakeScreenshots {
 	driver.navigate().to("https://www.toolsqa.com/automation-practice-switch-windows/");
 	driver.manage().window().maximize();
 	driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+	System.out.println(driver.getPageSource());
 	File file=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 	FileUtils.copyFile(file, new File("D:\\MP3 SONGS\\toosqa.jpg"));
 	
