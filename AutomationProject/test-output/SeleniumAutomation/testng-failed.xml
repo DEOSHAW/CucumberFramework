@@ -3,11 +3,11 @@
 <suite name="Failed suite [SeleniumAutomation]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Selenium(failed)">
     <classes>
-      <class name="winiumTest.WiniumTestDemo">
+      <class name="winiumTest.HeadlessBrowser">
         <methods>
-          <include name="SeleniumTest"/>
+          <include name="HeadlessBrowserTest"/>
         </methods>
-      </class> <!-- winiumTest.WiniumTestDemo -->
+      </class> <!-- winiumTest.HeadlessBrowser -->
     </classes>
   </test> <!-- Selenium(failed) -->
 </suite> <!-- Failed suite [SeleniumAutomation] -->

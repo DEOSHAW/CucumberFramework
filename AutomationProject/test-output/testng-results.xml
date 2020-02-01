@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2019-08-10T15:33:04Z" name="Default suite" finished-at="2019-08-10T15:33:42Z" duration-ms="37753">
+  <suite started-at="2019-11-30T13:14:03Z" name="SeleniumAutomation" finished-at="2019-11-30T13:14:03Z" duration-ms="65">
     <groups>
     </groups>
-    <test started-at="2019-08-10T15:33:04Z" name="Default test" finished-at="2019-08-10T15:33:42Z" duration-ms="37753">
-      <class name="winiumTest.TakeScreenshots">
-        <test-method signature="TakescreenshotHandle()[pri:0, instance:winiumTest.TakeScreenshots@33990a0c]" started-at="2019-08-10T15:33:04Z" name="TakescreenshotHandle" finished-at="2019-08-10T15:33:42Z" duration-ms="37705" status="PASS">
+    <test started-at="2019-11-30T13:14:03Z" name="Selenium" finished-at="2019-11-30T13:14:03Z" duration-ms="65">
+      <class name="winiumTest.FileHandling">
+        <test-method signature="File_Handling()[pri:0, instance:winiumTest.FileHandling@4d5b6aac]" started-at="2019-11-30T13:14:03Z" name="File_Handling" finished-at="2019-11-30T13:14:03Z" duration-ms="20" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TakescreenshotHandle -->
-      </class> <!-- winiumTest.TakeScreenshots -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- File_Handling -->
+      </class> <!-- winiumTest.FileHandling -->
+    </test> <!-- Selenium -->
+  </suite> <!-- SeleniumAutomation -->
 </testng-results>
