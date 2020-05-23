@@ -1,3 +1,4 @@
+@testFeature
 Feature: Login Feature
   Verify if the user is able to Login to the Naukri site
 
