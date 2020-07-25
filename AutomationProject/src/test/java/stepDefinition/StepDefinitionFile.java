@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -25,7 +26,10 @@ public class StepDefinitionFile {
 
 	@When("^user enters \"([^\"]*)\" and \"([^\"]*)\" Credentials$")
 	public void user_enters_and_Credentials(String username, String password) throws Throwable {
-		 driver.findElement(By.xpath("//*[@id=\"identifierId\"]")).sendKeys(username);
+		//Assert.assertTrue(false);
+		try
+		{
+		 driver.findElement(By.xpath("//*[@id='identifierId']")).sendKeys(username);
 		 Thread.sleep(2000);
 		 driver.findElement(By.xpath("//span[contains(text(),'Next')]")).click();
 		 Thread.sleep(2000);
@@ -33,6 +37,12 @@ public class StepDefinitionFile {
 		 Thread.sleep(2000);
 		 driver.findElement(By.xpath("//span[contains(text(),'Next')]")).click();
 		 Thread.sleep(5000);
+		}
+		catch(Exception e)
+		{
+			Assert.assertTrue(false);
+			//throw e;
+		}
 	}
 
 	@Then("^success message is displayed$")
