@@ -8,7 +8,7 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(
  //features = "Features",tags= {"@amazonFeature,@testFeature,@Guru99Feature,@seleniumEasyFeature","@roboFeature","@vaishnodeviFeature","@postmanFeature","QRFeature",@worksoftFeature,"@webTableFeature","@GitHub"},
-features = "Features",tags= {"@GitHub"},
+features = "Features",tags= {"@email"},
  glue={"stepDefinition"},
  plugin = { "pretty", "html:target/cucumber-reports" }
  )
