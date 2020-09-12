@@ -46,6 +46,7 @@ public class WorksoftDefinition {
 		
 		String text=driver.findElement(By.xpath("(//*[@class='hs-search-results__description'])[1]/preceding-sibling::a")).getText();
 	    Assert.assertEquals(text, "Worksoft Certify® - #1 Codeless Automated Business Process Testing");
+	    driver.close();
 	    
 	}
 
