@@ -13,7 +13,7 @@ public class BaseStepDefinition {
 	protected static JavascriptExecutor js=null;
 	
 	
-	/*public void LaunchBrowser()
+	public static void LaunchBrowser()
 	{
 		   System.setProperty("webdriver.chrome.driver", "C:\\Users\\Bishal\\chromedriver.exe");
 		   driver=new ChromeDriver();
@@ -22,7 +22,7 @@ public class BaseStepDefinition {
 		   wait=new WebDriverWait(driver,10);
 		   js=(JavascriptExecutor)driver;
 		
-	}*/
+	}
 	
 	
 
