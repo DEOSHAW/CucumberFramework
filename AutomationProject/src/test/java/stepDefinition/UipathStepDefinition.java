@@ -10,7 +10,7 @@ public class UipathStepDefinition extends BaseStepDefinition {
 	
 	@When("^UIPath site is open$")
 	public void uipath_site_is_open() throws Throwable {
-		LaunchBrowser();
+		
 		driver.get("https://www.uipath.com/");
 	}
 	

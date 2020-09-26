@@ -9,8 +9,8 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
  //features = "Features",tags= {"@amazonFeature,@testFeature,@Guru99Feature,@seleniumEasyFeature","@roboFeature","@vaishnodeviFeature","@postmanFeature","QRFeature",@worksoftFeature,"@webTableFeature","@GitHub"},
 //features = "Features",tags= {"@email,@worksoftFeature"},
-features = "Features",tags= {"@amazon1"},
- glue={"stepDefinition"},
+features = "Features",tags= {"@Gmail","@email"},
+ glue={"stepDefinition","hook"},
  plugin = { "pretty", "html:target/cucumber-reports" }
  )
 public class TestRunner {
