@@ -17,14 +17,14 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import utilitiesSelenium.UtilitiesClass;
 
-public class AmazonDefinition {
+public class AmazonDefinition extends BaseStepDefinition{
 	
-	WebDriver driver=null;
+	//WebDriver driver=null;
 	JavascriptExecutor js=null;
 	
 	@Given("^Amazon portal is launched$")
 	public void amazon_portal_is_launched() throws Throwable {
-		driver=UtilitiesClass.LaunchBrowser(driver,"https://www.amazon.com");
+		driver.get("https://www.amazon.com");
 	    
 	}
 

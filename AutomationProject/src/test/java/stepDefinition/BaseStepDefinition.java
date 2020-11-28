@@ -1,5 +1,6 @@
 package stepDefinition;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.JavascriptExecutor;
@@ -15,7 +16,7 @@ public class BaseStepDefinition {
 	
 	public static void LaunchBrowser()
 	{
-		   System.setProperty("webdriver.chrome.driver", "C:\\Users\\Bishal\\chromedriver.exe");
+		   System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+File.separator+"chromedriver.exe");
 		   driver=new ChromeDriver();
 		   driver.manage().window().maximize();
 		   driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
