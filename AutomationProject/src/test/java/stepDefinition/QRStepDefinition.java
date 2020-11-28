@@ -23,7 +23,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class QRStepDefinition {
+public class QRStepDefinition extends BaseStepDefinition {
 	
 	WebDriver driver=null;
 	WebDriverWait wait=null;
@@ -31,11 +31,7 @@ public class QRStepDefinition {
 	
 	@Given("^QR Portal is launched$")
 	public void qr_Portal_is_launched() throws Throwable {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Bishal\\chromedriver.exe");
-		   driver=new ChromeDriver();
-		   driver.manage().window().maximize();
-		   driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		   //driver.get("https://testautomationpractice.blogspot.com/");
+		
 		   driver.get("file:///C:/Users/Bishal/Downloads/DeoQRCode.png");
 	}
 

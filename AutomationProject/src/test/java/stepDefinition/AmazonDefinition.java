@@ -50,7 +50,6 @@ public class AmazonDefinition extends BaseStepDefinition{
 	
 	@When("^Navigate to local currency page$")
 	public void navigate_to_local_currency_page() throws Throwable {
-		
 		driver.findElement(By.cssSelector("i[class='a-icon a-icon-next-rounded']")).click();
 		WebElement currencyLink=driver.findElement(By.cssSelector("img[alt='Click here to shop in your local currency']"));
 		String imageText=currencyLink.getAttribute("alt");
@@ -59,7 +58,7 @@ public class AmazonDefinition extends BaseStepDefinition{
 		//driver.findElement(By.xpath("//*[@alt='Click here to shop in your local currency']/parent::a")).click();
 		js.executeScript("arguments[0].click();", driver.findElement(By.xpath("//*[@alt='Click here to shop in your local currency']/parent::a")));
 		
-	    
+		
 	}
 
 	@Then("^Validate The presence of Indian Currency$")
