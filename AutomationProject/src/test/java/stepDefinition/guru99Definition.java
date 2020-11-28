@@ -13,17 +13,12 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class guru99Definition {
-	WebDriver driver=null;
+public class guru99Definition extends BaseStepDefinition {
 	Actions actions;
 	
 	@Given("^Guru(\\d+) portal is launched$")
 	public void guru_portal_is_launched(int arg1) throws Throwable {
 		
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Bishal\\chromedriver.exe");
-		   driver=new ChromeDriver();
-		   driver.manage().window().maximize();
-		   driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		   driver.get("http://demo.guru99.com/test/drag_drop.html");
 		   
 	}
