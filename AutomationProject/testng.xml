@@ -1,8 +1,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="SeleniumAutomation">
  <test name="Selenium">
+ <parameter name="val1" value="1" />
+ <parameter name="val2" value="2" />
  <classes>
- <class name="winiumTest.FileHandling" />
+ <class name="winiumTest.TestNGDemo" />
  </classes>
  </test>
 </suite>

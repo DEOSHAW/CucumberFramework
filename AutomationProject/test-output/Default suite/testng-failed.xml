@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <parameter name="val2" value="param-val-not-found"/>
+  <parameter name="val1" value="param-val-not-found"/>
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="winiumTest.TakeScreenshots">
+      <class name="winiumTest.TestNGDemo">
         <methods>
-          <include name="TakescreenshotHandle"/>
+          <include name="prameterTestOne"/>
         </methods>
-      </class> <!-- winiumTest.TakeScreenshots -->
+      </class> <!-- winiumTest.TestNGDemo -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

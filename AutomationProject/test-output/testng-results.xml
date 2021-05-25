@@ -1,17 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
+    <line>
+      <![CDATA[Logged]]>
+    </line>
   </reporter-output>
-  <suite started-at="2020-04-30T11:29:27Z" name="Default suite" finished-at="2020-04-30T11:29:27Z" duration-ms="93">
+  <suite started-at="2021-04-17T14:40:03Z" name="SeleniumAutomation" finished-at="2021-04-17T14:40:03Z" duration-ms="35">
     <groups>
     </groups>
-    <test started-at="2020-04-30T11:29:27Z" name="Default test" finished-at="2020-04-30T11:29:27Z" duration-ms="93">
-      <class name="winiumTest.FileHandling">
-        <test-method signature="File_Handling()[pri:0, instance:winiumTest.FileHandling@662b4c69]" started-at="2020-04-30T11:29:27Z" name="File_Handling" finished-at="2020-04-30T11:29:27Z" duration-ms="31" status="PASS">
+    <test started-at="2021-04-17T14:40:03Z" name="Selenium" finished-at="2021-04-17T14:40:03Z" duration-ms="35">
+      <class name="winiumTest.TestNGDemo">
+        <test-method signature="prameterTestOne(int, int)[pri:0, instance:winiumTest.TestNGDemo@67d48005]" started-at="2021-04-17T14:40:03Z" name="prameterTestOne" finished-at="2021-04-17T14:40:03Z" duration-ms="10" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
+            <line>
+              <![CDATA[Logged]]>
+            </line>
           </reporter-output>
-        </test-method> <!-- File_Handling -->
-      </class> <!-- winiumTest.FileHandling -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- prameterTestOne -->
+      </class> <!-- winiumTest.TestNGDemo -->
+    </test> <!-- Selenium -->
+  </suite> <!-- SeleniumAutomation -->
 </testng-results>
