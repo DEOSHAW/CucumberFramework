@@ -11,6 +11,7 @@ import cucumber.api.junit.Cucumber;
 //features = "Features",tags= {"@email,@worksoftFeature"},
 features = "Features",tags= {"@pwc"},
  glue={"stepDefinition","hook"},
+ monochrome=true,
  plugin = { "pretty", "html:target/cucumber-reports","rerun:Features/rerun.txt" }
  )
 public class TestRunner {
