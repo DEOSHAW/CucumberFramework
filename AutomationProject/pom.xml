@@ -81,7 +81,7 @@
         <version>2.22.0</version>
         <configuration>
           <includes>
-            <exclude>**/*Runner.java</exclude>
+            <include>**/*Runner.java</include>
           </includes>
         </configuration>
       </plugin>
