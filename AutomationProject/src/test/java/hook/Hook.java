@@ -27,8 +27,9 @@ public class Hook extends BaseStepDefinition {
  
  @After
     public void tearDown(){
-        driver.close();
-        System.out.println("Browser closed");
+	 
+	 BaseStepDefinition.CloseBrowser();
+       
     } 
 
 }

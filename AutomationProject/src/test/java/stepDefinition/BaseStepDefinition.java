@@ -22,6 +22,14 @@ public class BaseStepDefinition {
 		   driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		   wait=new WebDriverWait(driver,10);
 		   js=(JavascriptExecutor)driver;
+		 
+		
+	}
+
+
+	public static void CloseBrowser() {
+		 driver.close();
+	        System.out.println("Browser closed");
 		
 	}
 	
