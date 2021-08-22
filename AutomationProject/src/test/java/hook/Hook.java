@@ -11,7 +11,7 @@ import stepDefinition.BaseStepDefinition;
 public class Hook extends BaseStepDefinition {
 	
 	
-	@Before
+	@Before(order = 0)
     public void launchBrowser(){
 		
 		BaseStepDefinition.LaunchBrowser();
@@ -25,7 +25,7 @@ public class Hook extends BaseStepDefinition {
 		   System.out.println("Browser launched");
     } 
  
- @After
+ @After(order = 0)
     public void tearDown(){
 	 
 	 BaseStepDefinition.CloseBrowser();
