@@ -8,7 +8,8 @@ import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import stepDefinition.BaseStepDefinition;
 
-public class Hook extends BaseStepDefinition {
+//public class Hook extends BaseStepDefinition {
+public class Hook {
 	
 	
 	@Before(order = 0)
