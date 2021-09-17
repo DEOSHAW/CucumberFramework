@@ -9,7 +9,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
  //features = "Features",tags= {"@amazonFeature,@testFeature,@Guru99Feature,@seleniumEasyFeature","@roboFeature","@vaishnodeviFeature","@postmanFeature","QRFeature",@worksoftFeature,"@webTableFeature","@GitHub"},
 //features = "Features",tags= {"@email,@worksoftFeature"},
-features = "Features",tags= {"@servicenow"},
+features = "Features",tags= {"@job"},
  glue={"stepDefinition","hook"},
  monochrome=true,
  plugin = { "pretty", "html:target/cucumber-reports","rerun:Features/rerun.txt" }
