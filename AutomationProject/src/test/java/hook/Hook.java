@@ -17,6 +17,7 @@ public class Hook {
 	WebDriverWait wait;
 	JavascriptExecutor js;
 	
+    //@Before(order = 0)
 	@Before(order = 0)
     public void launchBrowser(){
 		
@@ -30,7 +31,7 @@ public class Hook {
            System.out.println("Browser launched");*/
     } 
  
-    @After(order = 0)
+    @After
     public void tearDown(){
     	//driver.quit();
 	   BaseStepDefinition.CloseBrowser();
