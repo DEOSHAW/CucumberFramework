@@ -31,7 +31,7 @@ public class BaseStepDefinition {
 
 
 	public static void CloseBrowser() {
-		    driver.close();
+		    driver.quit();
 	        System.out.println("Browser closed");
 		
 	}
