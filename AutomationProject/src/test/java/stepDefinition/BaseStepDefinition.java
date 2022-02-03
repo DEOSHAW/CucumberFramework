@@ -1,6 +1,7 @@
 package stepDefinition;
 
 import java.io.File;
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.JavascriptExecutor;
@@ -21,8 +22,8 @@ public class BaseStepDefinition {
 		   System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+File.separator+"chromedriver.exe");
 		   driver=new ChromeDriver();
 		   driver.manage().window().maximize();
-		   driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-		   wait=new WebDriverWait(driver,10);
+		   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+		   wait=new WebDriverWait(driver, Duration.ofSeconds(3));
 		   js=(JavascriptExecutor)driver;
 		   actions=new Actions(driver);
 		 
