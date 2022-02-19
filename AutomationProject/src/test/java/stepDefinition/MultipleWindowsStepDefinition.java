@@ -8,7 +8,7 @@ import org.openqa.selenium.WindowType;
 import cucumber.api.java.en.Given;
 
 public class MultipleWindowsStepDefinition extends BaseStepDefinition {
-	WebDriver newDriver;
+	
 	String parentWindow;
 	@Given("^Portal1 is launched$")
 	public void portal_is_launched() throws Exception {
@@ -25,20 +25,20 @@ public class MultipleWindowsStepDefinition extends BaseStepDefinition {
 
 	@Given("^user opens a new tab$")
 	public void user_opens_a_new_tab() throws Exception {
-		newDriver= driver.switchTo().newWindow(WindowType.TAB);
-		newDriver.get("https://www.oracle.com/in/index.html");
+		driver.switchTo().newWindow(WindowType.TAB);
+		driver.get("https://www.oracle.com/in/index.html");
 		
 	}
 
 	@Given("^performs operation in the second window$")
 	public void performs_operation_in_the_second_window() throws Exception {
-		newDriver.findElement(By.xpath("(//*[@data-target='products'])[1]")).click();
+		driver.findElement(By.xpath("(//*[@data-target='products'])[1]")).click();
 		Thread.sleep(2000);
 	}
 
 	@Given("^user switches back to first window$")
 	public void user_switches_back_to_first_window() throws Exception {
-	   newDriver.switchTo().window(parentWindow);
+	   driver.switchTo().window(parentWindow);
 	  WebElement logo= driver.findElement(By.xpath("//*[contains(@alt,'OrangeHRM Inc Logo')]"));
 	  js.executeScript("arguments[0].setAttribute('style', 'border:2px solid blue; background:Red')", logo);
 	  Thread.sleep(2000);
