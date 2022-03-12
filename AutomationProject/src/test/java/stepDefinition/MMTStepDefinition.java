@@ -8,6 +8,7 @@ import java.util.logging.FileHandler;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 
 import cucumber.api.java.en.Given;
@@ -42,6 +43,11 @@ public class MMTStepDefinition extends BaseStepDefinition {
 			org.openqa.selenium.io.FileHandler.copy(Service.getScreenshotAs(OutputType.FILE), file);
 			
 		}
+		TakesScreenshot ts=(TakesScreenshot)driver;
+		File src=ts.getScreenshotAs(OutputType.FILE);
+		File dest=new File(System.getProperty("user.dir")+File.separator+"Screen.jpeg");
+		org.openqa.selenium.io.FileHandler.copy(src,dest );
+		
 	}
 
 
