@@ -11,7 +11,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class HackerRabkSignupStepDefinition extends BaseStepDefinition {
+public class HackerRankSignupStepDefinition extends BaseStepDefinition {
 	
 	@Given("^Hacker Rank sign up page is open$")
 	public void hacker_Rank_sign_up_page_is_open() throws Exception {
