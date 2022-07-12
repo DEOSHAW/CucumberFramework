@@ -1,5 +1,6 @@
 package stepDefinition;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -14,17 +15,12 @@ import org.testng.Assert;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 
-public class WorksoftDefinition {
-	WebDriver driver=null;
-	JavascriptExecutor js=null;
-	Actions actions=null;
+public class WorksoftDefinition extends BaseStepDefinition {
+	
 	
 	@Given("^Worksoft portal is launched$")
 	public void worksoft_portal_is_launched() throws Throwable {
-		   System.setProperty("webdriver.chrome.driver", "C:\\Users\\Bishal\\chromedriver.exe");
-		   driver=new ChromeDriver();
-		   driver.manage().window().maximize();
-		   driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		   
 		   driver.get("https://www.worksoft.com/");
 	}
 
@@ -36,7 +32,7 @@ public class WorksoftDefinition {
 		searchText.clear();
 		js.executeScript("arguments[0].value=arguments[1]", searchText,"Certify");
 		actions=new Actions(driver);
-		actions.sendKeys(Keys.ENTER).perform();
+		actions.sendKeys(searchText,Keys.ENTER).perform();
 		
 		
 	}
@@ -45,7 +41,7 @@ public class WorksoftDefinition {
 	public void search_Result_for_Worksoft_is_Displayed() throws Throwable {
 		
 		String text=driver.findElement(By.xpath("(//*[@class='hs-search-results__description'])[1]/preceding-sibling::a")).getText();
-	    Assert.assertEquals(text, "Worksoft Certify® - #1 Codeless Automated Business Process Testing");
+	    Assert.assertEquals(text, "CertifyÂ® Automated Testing | Codeless Test Automation");
 	    driver.close();
 	    
 	}
