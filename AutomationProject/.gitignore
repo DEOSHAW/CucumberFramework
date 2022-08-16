@@ -1,5 +1,8 @@
 /target/
-*.classpath
+/test-output/
 /*.prefs/
 /bin
+*.classpath
+*.project
+
 
