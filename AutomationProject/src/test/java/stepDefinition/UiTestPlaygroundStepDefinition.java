@@ -10,6 +10,7 @@ import cucumber.api.java.en.When;
 
 public class UiTestPlaygroundStepDefinition extends BaseStepDefinition {
 	WebElement nbspButton;
+	String cpuLoad;
 	@Given("^UI Testing Playground NBSP portal is open$")
 	public void ui_Testing_Playground_NBSP_portal_is_open() throws Exception {
 		
@@ -27,6 +28,26 @@ public class UiTestPlaygroundStepDefinition extends BaseStepDefinition {
 	public void the_button_gets_clicked() throws Exception {
 		js.executeScript("arguments[0].setAttribute('style', 'border:2px solid blue; background:Red')", nbspButton);
 		Thread.sleep(1500);
+	    
+	}
+	
+	@Given("^UI Testing Playground DT portal is open$")
+	public void ui_Testing_Playground_DT_portal_is_open() throws Exception {
+	    driver.get("http://uitestingplayground.com/dynamictable");
+	}
+
+	
+	@When("^User extracts the warning message for cpu message$")
+	public void user_extracts_the_warning_message_for_cpu_message() throws Exception {
+		cpuLoad=driver.findElement(By.xpath("//*[@class='bg-warning']")).getText();
+	}
+
+	@Then("^cpu usage is displayed$")
+	public void cpu_usage_is_displayed() throws Exception {
+	    js.executeScript("alert(arguments[0])", cpuLoad);
+	    Thread.sleep(2000);
+	    driver.switchTo().alert().accept();
+	    Thread.sleep(1000);
 	    
 	}
 
