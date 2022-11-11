@@ -1,5 +1,7 @@
 package stepDefinition;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -27,7 +29,7 @@ public class SAPLabStepDefinition extends BaseStepDefinition {
 	public void user_searches_for_products_with(String searchTerm) throws Exception {
 		js=(JavascriptExecutor)driver;
 		actions=new Actions(driver);
-		wait=new WebDriverWait(driver, 15);
+		wait=new WebDriverWait(driver, Duration.ofSeconds(15));
 		driver.findElement(By.xpath("//*[contains(@class,'iconSearch')]")).click();
 		WebElement searchBox=driver.findElement(By.xpath("//*[@placeholder='Search']"));
 		searchBox.sendKeys(searchTerm);

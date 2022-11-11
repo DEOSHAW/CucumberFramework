@@ -24,7 +24,7 @@ public class BaseStepDefinition {
 	
 	public static void LaunchBrowser()
 	{
-		   System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+File.separator+"chromedriver.exe");
+		   //System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+File.separator+"chromedriver.exe");
 		   driver=new ChromeDriver();
 		   driver.manage().window().maximize();
 		   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));

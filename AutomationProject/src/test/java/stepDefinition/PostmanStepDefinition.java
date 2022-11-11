@@ -1,5 +1,6 @@
 package stepDefinition;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -33,7 +34,7 @@ public class PostmanStepDefinition extends BaseStepDefinition {
 	@When("^User handles all the Pop Ups$")
 	public void user_handles_all_the_Pop_Ups() throws Throwable {
 		
-		wait=new WebDriverWait(driver,10);
+		wait=new WebDriverWait(driver,Duration.ofSeconds(10));
 		
 		WebElement close=driver.findElement(By.xpath("//*[text()='X']"));
 		wait.until(ExpectedConditions.visibilityOf(close)).click();

@@ -3,6 +3,7 @@ package winiumTest;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 
@@ -29,7 +30,7 @@ public class FacebookSignup {
 		driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
 		Actions builder=new Actions(driver);
 		
-		WebDriverWait wait=new WebDriverWait(driver,5);
+		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(5));
 		WebElement day=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@title='Day']")));
 		Select Day=new Select(day);
 		WebElement month=driver.findElement(By.xpath("//*[@title='Month']"));

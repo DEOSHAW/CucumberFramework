@@ -1,5 +1,6 @@
 package stepDefinition;
 
+import java.time.Duration;
 import java.util.Iterator;
 import java.util.List;
 
@@ -26,7 +27,7 @@ public class GitHUbStepDefinition {
 	public void github_portal_is_launched() throws Throwable {
 		driver=UtilitiesClass.LaunchBrowser(driver,"https://www.github.com");
 		js=(JavascriptExecutor)driver;
-		wait=new WebDriverWait(driver,20);
+		wait=new WebDriverWait(driver,Duration.ofSeconds(5));
 		action=new Actions(driver);
 	    
 	}
