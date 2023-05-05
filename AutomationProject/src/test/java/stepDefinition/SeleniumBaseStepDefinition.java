@@ -5,12 +5,14 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class SeleniumBaseStepDefinition extends BaseStepDefinition
 {
+	WebElement svgElement;
 	
 	@Given("^Selenium Base portal is open$")
 	public void selenium_Base_portal_is_open() throws Exception {
@@ -47,6 +49,21 @@ public class SeleniumBaseStepDefinition extends BaseStepDefinition
 	public void boxes_should_get_checked() throws Exception {
 	    System.out.println(driver.findElement(By.id("radioButton2")).isSelected());
 	}
+	
+	@When("^User clicks on SVG Element$")
+	public void user_clicks_on_SVG_Element() throws Exception {
+	    svgElement=driver.findElement(By.xpath("//*[local-name()='rect']"));
+	    svgElement.click();
+	    Thread.sleep(2000);
+	}
+
+	@Then("^SVG Element is highlighted$")
+	public void svg_Element_is_highlighted() throws Exception {
+		js.executeScript("arguments[0].setAttribute('style', 'border:2px solid green; background:Red')", svgElement);
+		Thread.sleep(3000);
+	}
+
+
 
 
 
