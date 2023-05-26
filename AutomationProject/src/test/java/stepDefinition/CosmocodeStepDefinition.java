@@ -20,7 +20,7 @@ public class CosmocodeStepDefinition extends BaseStepDefinition {
 	@When("^User searches for any of below countries$")
 	public void user_searches_for_any_of_below_countries(DataTable table) throws Exception {
 	    
-		
+		//Getting data from data table
 		List<List<String>> data=table.asLists(String.class);
 		country=data.get(1).get(2);
 		
