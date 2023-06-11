@@ -1,4 +1,8 @@
-To run features in parallel
+To run features in parallel:
+
+Refer below article to make driver thread-safe by using ThreadLocal class:
+
+https://www.linkedin.com/pulse/selenium-parallel-testing-using-java-threadlocal-testng-shargo/
 
 comment TestNG dependency
 
@@ -20,6 +24,9 @@ Add below in POM.
 	       <useUnlimitedThreads>true</useUnlimitedThreads>
 	</configuration>
 </plugin>
+
+
+
 
 
 
