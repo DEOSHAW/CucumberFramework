@@ -15,7 +15,6 @@ public class Hook {
 	WebDriverWait wait;
 	JavascriptExecutor js;
 	
-    //@Before(order = 0)
 	@Before(order = 0)
     public void launchBrowser(){
 		
