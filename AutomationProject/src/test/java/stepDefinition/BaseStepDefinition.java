@@ -32,7 +32,7 @@ public class BaseStepDefinition {
 		   driver=new ChromeDriver(options);
 		   driver.manage().window().maximize();
 		   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-		   wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+		   wait=new WebDriverWait(driver, Duration.ofSeconds(20));
 		   js=(JavascriptExecutor)driver;
 		   actions=new Actions(driver);
 		 
