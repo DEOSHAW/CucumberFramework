@@ -4,8 +4,10 @@ import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
+import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -16,13 +18,18 @@ public class MLRStepDefinition extends BaseStepDefinition {
 	@Given("^MLR portal is open$")
 	public void mlr_portal_is_open() throws Exception {
 	    driver.get("https://www.majorleague.rugby/");
-	    driver.findElement(By.cssSelector(".hustle-button-icon.hustle-button-close.has-background")).click();
+	    List<WebElement> closeButton=driver.findElements(By.cssSelector(".hustle-button-icon.hustle-button-close.has-background"));
+	    if(closeButton.size()>0)
+	    {
+	    	closeButton.get(0).click();
+	    	
+	    }
 	    
 	}
 
 	@When("^User searches for the \"([^\"]*)\" on MLR site$")
 	public void user_searches_for_the_on_MLR_site(String teamName) throws Exception {
-	    driver.findElement(By.xpath("(//a[contains(text(),'Teams')])[1]")).click();
+	    driver.findElement(By.xpath("//a[contains(text(),'Teams')]")).click();
 	    
 	    Robot robot=new Robot();
 	    robot.keyPress(KeyEvent.VK_CONTROL);
