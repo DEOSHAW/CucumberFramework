@@ -13,7 +13,9 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import cucumber.api.Scenario;
+import io.cucumber.java.Scenario;
+
+
 
 public class BaseStepDefinition {
 	protected static WebDriver driver=null;
