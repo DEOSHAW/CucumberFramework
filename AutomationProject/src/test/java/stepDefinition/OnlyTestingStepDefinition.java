@@ -32,6 +32,14 @@ public class OnlyTestingStepDefinition extends BaseStepDefinition
 	    driver.findElement(By.xpath("//label[@for='name']/following-sibling::input[3]")).sendKeys(dataList.get(0).get("Address"));
 	    Thread.sleep(3000);
 	}
+	
+	@When("User enters details {string},{string} and {string}")
+	public void user_enters_details_and(String Name, String Surname, String Address) throws InterruptedException {
+		driver.findElement(By.xpath("//label[@for='name']/following-sibling::input[1]")).sendKeys(Name);
+	    driver.findElement(By.xpath("//label[@for='name']/following-sibling::input[2]")).sendKeys(Surname);
+	    driver.findElement(By.xpath("//label[@for='name']/following-sibling::input[3]")).sendKeys(Address);
+	    Thread.sleep(3000);
+	}
 
 
 }
