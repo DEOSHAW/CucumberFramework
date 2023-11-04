@@ -10,12 +10,24 @@ import io.cucumber.java.en.When;
 public class NextGenAIStepDefinition extends BaseStepDefinition {
 	String alertText,confirmAlertText,promptText;
 	
-	@Given("NextGenAI alerts portal is open")
-	public void next_gen_ai_alerts_portal_is_open() {
-	    driver.get("https://nxtgenaiacademy.com/alertandpopup/");
+	@Given("NextGenAI portal is open")
+	public void next_gen_ai_portal_is_open() {
+	    driver.get("https://nxtgenaiacademy.com");
+	    
+	    }
+	
+	@When("User navigates to alerts page")
+	public void user_navigates_to_alerts_page() {
+		
+		//Navigating to NextGen Alert demo site
+		driver.findElement(By.xpath("(//a[text()='Demo Sites'])[2]")).click();
+		driver.findElement(By.xpath("(//a[text()='Practice Automation'])[2]")).click();
+		driver.findElement(By.xpath("(//a[text()='Demo Site – Alert and Popup'])[2]")).click();
+		
 	}
 	@When("User clicks on buttons to generate portals and handles them")
 	public void user_clicks_on_buttons_to_generate_portals_and_handles_them() throws InterruptedException {
+		
 		
 		//Handle alert
 		driver.findElement(By.xpath("//button[@name='alertbox']")).click();
@@ -47,6 +59,29 @@ public class NextGenAIStepDefinition extends BaseStepDefinition {
 	    System.out.println("Alert box text: "+alertText);
 	    System.out.println("Confirm alert text: "+confirmAlertText);
 	    System.out.println("Prompt text: "+promptText);
+	}
+	
+	@When("User navigates to Web table page")
+	public void user_navigates_to_web_table_page() {
+		//Navigating to NextGen Alert demo site
+	    driver.findElement(By.xpath("(//a[text()='Demo Sites'])[2]")).click();
+		driver.findElement(By.xpath("(//a[text()='Practice Automation'])[2]")).click();
+		driver.findElement(By.xpath("(//a[text()='Demo Site – WebTable'])[2]")).click();
+	}
+	@Then("the web table values are printed")
+	public void the_web_table_values_are_printed() {
+	    int rowNum=driver.findElements(By.xpath("//table//tr")).size();
+	    int colNum=driver.findElements(By.xpath("//table//tr[1]//td")).size();
+	    
+	    for(int i=1;i<=rowNum;i++)
+	    {
+	    	for(int j=1;j<=colNum;j++)
+	    	{
+	    		System.out.print(driver.findElement(By.xpath("//table//tr["+i+"]//td["+j+"]")).getText()+" ");
+	    		
+	    	}
+	    	System.out.println();
+	    }
 	}
 
 
