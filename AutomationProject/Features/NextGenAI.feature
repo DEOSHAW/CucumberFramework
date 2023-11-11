@@ -13,3 +13,10 @@ Then the texts on the popup is captured
 Scenario: Web Table
 When User navigates to Web table page
 Then the web table values are printed
+
+@alertNextAiFrames
+Scenario: Iframes Test
+When User navigates to iframes page
+And  User switches to Forms section and fills the form
+And  User extracts main page text
+Then Page text validation is successful 

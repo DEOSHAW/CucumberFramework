@@ -2,13 +2,15 @@ package stepDefinition;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class NextGenAIStepDefinition extends BaseStepDefinition {
-	String alertText,confirmAlertText,promptText;
+	String alertText,confirmAlertText,promptText,pageText;
 	
 	@Given("NextGenAI portal is open")
 	public void next_gen_ai_portal_is_open() {
@@ -83,6 +85,34 @@ public class NextGenAIStepDefinition extends BaseStepDefinition {
 	    	System.out.println();
 	    }
 	}
+	
+	@When("User navigates to iframes page")
+	public void user_navigates_to_iframes_page() {
+		driver.findElement(By.xpath("(//a[text()='Demo Sites'])[2]")).click();
+		driver.findElement(By.xpath("(//a[text()='Practice Automation'])[2]")).click();
+		driver.findElement(By.xpath("(//a[contains(text(),'iFrames')])[2]")).click();
+	    
+	}
+	@When("User switches to Forms section and fills the form")
+	public void user_switches_to_forms_section_and_fills_the_form() {
+		driver.switchTo().frame("formpage");
+		driver.findElement(By.xpath("//label[normalize-space(text())='First Name']/following-sibling::input")).sendKeys("iFrame");
+		driver.findElement(By.xpath("//label[normalize-space(text())='Last Name']/following-sibling::input")).sendKeys("Test");
+	}
+	@When("User extracts main page text")
+	public void user_extracts_main_page_text() {
+		driver.switchTo().defaultContent();
+		WebElement pageTitle=driver.findElement(By.xpath("//h2/center"));
+		pageText=(String) js.executeScript("return arguments[0].innerHTML;", pageTitle);
+	   
+	}
+	@Then("Page text validation is successful")
+	public void page_text_validation_is_successful() {
+	    Assert.assertEquals(pageText, "I Frame Demo Page");
+	}
+
+
+
 
 
 
