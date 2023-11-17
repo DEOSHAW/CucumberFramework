@@ -1,5 +1,8 @@
 package stepDefinition;
 
+import java.util.Iterator;
+import java.util.Set;
+
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -109,6 +112,36 @@ public class NextGenAIStepDefinition extends BaseStepDefinition {
 	@Then("Page text validation is successful")
 	public void page_text_validation_is_successful() {
 	    Assert.assertEquals(pageText, "I Frame Demo Page");
+	}
+	
+	@When("User navigates to multiple windows page")
+	public void user_navigates_to_multiple_windows_page() {
+		driver.findElement(By.xpath("(//a[text()='Demo Sites'])[2]")).click();
+		driver.findElement(By.xpath("(//a[text()='Practice Automation'])[2]")).click();
+		driver.findElement(By.xpath("(//a[contains(text(),'Multiple Windows')])[2]")).click(); 
+	}
+	@When("User switches to new message window")
+	public void user_switches_to_new_message_window() {
+	   driver.findElement(By.xpath("//button[contains(text(),'New Browser Tab')]")).click();
+	}
+	@Then("Body text is displayed")
+	public void body_text_is_displayed() {
+	    String parentWindow=driver.getWindowHandle();
+	    Set<String> allWindows=driver.getWindowHandles();
+	    Iterator<String> itr=allWindows.iterator();
+	    String currentWindow="";
+	    while(itr.hasNext())
+	    {
+	    	currentWindow=itr.next();
+	    	if(!parentWindow.equalsIgnoreCase(currentWindow))
+	    	{
+	    		driver.switchTo().window(currentWindow);
+	    		break;
+	    	}
+	    }
+	    
+	    System.out.println(driver.getTitle());
+	    
 	}
 
 

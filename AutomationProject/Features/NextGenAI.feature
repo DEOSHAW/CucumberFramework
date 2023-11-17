@@ -20,3 +20,9 @@ When User navigates to iframes page
 And  User switches to Forms section and fills the form
 And  User extracts main page text
 Then Page text validation is successful 
+
+@alertNextGenAiWindows
+Scenario: Message Window test
+When User navigates to multiple windows page
+And  User switches to new message window
+Then Body text is displayed
