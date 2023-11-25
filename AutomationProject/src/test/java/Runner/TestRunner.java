@@ -9,7 +9,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
- features = "Features",tags= "@alertNextGenAiWindows",
+ features = "Features",tags= "@herokuFileUpload",
  glue={"stepDefinition","hook"},
  monochrome=true,
  plugin = { "pretty", "html:target/cucumber-reports","json:target/cucumber.json","rerun:Features/rerun.txt" }
