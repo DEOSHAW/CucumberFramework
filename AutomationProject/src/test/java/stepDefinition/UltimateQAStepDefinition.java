@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -12,6 +13,7 @@ import io.cucumber.java.en.When;
 public class UltimateQAStepDefinition extends BaseStepDefinition 
 {
 	List<WebElement> planNames,planPrices;
+	Select carDropdown;
 	
 	
 	@Given("User opens UltimateQA portal")
@@ -43,6 +45,30 @@ public class UltimateQAStepDefinition extends BaseStepDefinition
 		driver.switchTo().alert().dismiss();
 	   
 	}
+	
+	@When("User lands on the dropdown page")
+	public void user_lands_on_the_dropdown_page() {
+	    driver.findElement(By.xpath("//a[contains(text(),'Interactions with simple elements')]")).click();
+	}
+	@When("User Selects a value from the dropdown")
+	public void user_selects_a_value_from_the_dropdown() {
+		WebElement carDropdownElement=driver.findElement(By.xpath("//select"));
+		carDropdown=new Select(carDropdownElement);
+	    
+	}
+	@Then("Selected value is displayed")
+	public void selected_value_is_displayed() {
+		carDropdown.selectByValue("audi");
+		List<WebElement> selectedElements=carDropdown.getAllSelectedOptions();
+		System.out.println("Total Selected options is: "+selectedElements.size());
+		for(WebElement ele:selectedElements)
+		{
+			System.out.println("Selected option is "+ele.getText());
+		}
+	}
+
+
+
 
 
 }
