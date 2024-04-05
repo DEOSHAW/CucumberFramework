@@ -6,6 +6,7 @@ import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.io.FileHandler;
+import org.testng.Assert;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -21,6 +22,14 @@ public class AutomationDemoStepDefinition extends BaseStepDefinition
 	public void user_clicks_on_skip_sign_in_link() {
 	    driver.findElement(By.cssSelector("#btn2")).click();
 	}
+	
+	@When("User navigates to frames switching page")
+	public void user_navigates_to_frames_switching_page() 
+	{
+	    driver.findElement(By.xpath("//a[text()='SwitchTo']")).click();
+	    driver.findElement(By.xpath("//a[text()='Frames']")).click();
+	}
+	
 	@When("user switches to frame")
 	public void user_switches_to_frame() {
 	    driver.findElement(By.xpath("//a[text()='SwitchTo']")).click();
@@ -43,6 +52,31 @@ public class AutomationDemoStepDefinition extends BaseStepDefinition
 		
 		File src=driver.findElement(By.xpath("//h5[text()='Nested iFrames']")).getScreenshotAs(OutputType.FILE);
 	    FileHandler.copy(src, new File(System.getProperty("user.dir")+File.separator+"Frames.png"));
+	}
+	
+	@When("User navigates to Accordion page")
+	public void user_navigates_to_accordion_page() 
+	{
+	    driver.findElement(By.xpath("//a[text()='Widgets']")).click();
+	    driver.findElement(By.xpath("//a[normalize-space(text())='Accordion']")).click();
+	}
+	@When("User clicks on an accordion")
+	public void user_clicks_on_an_accordion() 
+	{
+	    driver.findElement(By.xpath("//b[contains(text(),'Methhod Chaining')]/..")).click();
+	}
+	@Then("accordion text is displayed")
+	public void accordion_text_is_displayed() 
+	{
+	    String accordionText=driver.findElement(By.cssSelector("div#collapse3>div")).getText();
+	    if(accordionText.contains("chain the methods without breaking the code"))
+	    {
+	    	Assert.assertTrue(true);
+	    }
+	    else
+	    {
+	    	Assert.assertTrue(false);
+	    }
 	}
 
 
