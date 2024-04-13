@@ -17,5 +17,5 @@ Then label of parent frame is displayed
 Scenario: Accordion Demo
 When User navigates to Accordion page
 When User clicks on an accordion
-Then accordion text is displayed
+Then accordion text is displayed 
 
