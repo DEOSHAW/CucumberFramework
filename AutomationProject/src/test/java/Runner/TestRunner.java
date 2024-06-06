@@ -7,7 +7,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
- features = "Features",tags= "@mahindra",
+ features = "Features",tags= "@demoQADragAndDrop",
  glue={"stepDefinition","hook"},
  monochrome=true,
  plugin = { "pretty", "html:target/cucumber-reports","json:target/cucumber.json","rerun:Features/rerun.txt" }
