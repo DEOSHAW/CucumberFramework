@@ -32,6 +32,7 @@ public class BaseStepDefinition {
 	      options.addArguments("--no-sandbox");
 	      options.addArguments("--disable-dev-shm-usage");
 	      options.addArguments("log-level=2");
+	      //options.addArguments("--headless");
 		   driver=new ChromeDriver(options);
 		   driver.manage().window().maximize();
 		   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
