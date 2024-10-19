@@ -69,6 +69,26 @@ public class QSpiderStepDefinition extends BaseStepDefinition
 	   wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2[text()='Sign Up']")));
 	   Assert.assertTrue(driver.getCurrentUrl().contains("/ui/browser/"));
 	}
+	
+	@When("User navigates to login page with shadow dom")
+	public void user_navigates_to_login_page_with_shadow_dom()
+	{
+		driver.findElement(By.xpath("(//div[text()='Explore more'])[1]")).click();
+		driver.findElement(By.xpath("//section[text()='Shadow Root Elements']")).click();
+		driver.findElement(By.xpath("//section[text()='Shadow Root']")).click();
+		
+	}
+	@When("User logs in to portal to login page having shadow dom")
+	public void user_logs_in_to_portal_to_login_page_having_shadow_dom() throws InterruptedException
+	{
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")));
+		driver.findElement(By.cssSelector("div.my-3")).getShadowRoot().findElement(By.cssSelector("input")).sendKeys("TestUser");
+		driver.findElement(By.cssSelector("div.my-3:nth-child(2)")).getShadowRoot().findElement(By.cssSelector("input")).sendKeys("TestUser");
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//button[text()='Login']")).click();
+		Thread.sleep(2000);
+	    
+	}
 
 
 
