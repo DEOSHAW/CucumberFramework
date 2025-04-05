@@ -2,6 +2,7 @@ package stepDefinition;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -9,6 +10,7 @@ import io.cucumber.java.en.When;
 
 public class SeleniumBaseIoStepDefinition extends BaseStepDefinition
 {
+	static String colourAttribute;
 	
 	@Given("User is on SeleniumBaseIO portal is open")
 	public void user_is_on_selenium_base_io_portal_is_open() 
@@ -30,9 +32,19 @@ public class SeleniumBaseIoStepDefinition extends BaseStepDefinition
 		driver.switchTo().defaultContent();
 		driver.switchTo().frame("myFrame3");
 		driver.findElement(By.id("checkBox6")).click();
-		Thread.sleep(1000);
-		
-	    
+		Thread.sleep(1000);    
+	}
+	
+	@When("User extracts the colour")
+	public void user_extracts_the_colour()
+	{
+	    colourAttribute=driver.findElement(By.xpath("//*[local-name()='rect']")).getAttribute("fill");
+	}
+	@Then("Colour is displayed")
+	public void colour_is_displayed()
+	{
+		System.out.println("Attribute of the colour: "+colourAttribute);
+	    Assert.assertEquals(colourAttribute, "#4CA0A0");
 	}
 
 }
