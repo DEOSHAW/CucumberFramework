@@ -13,3 +13,8 @@ Then iframe text is highlighted
 Scenario: Get SVG element colour
 When User extracts the colour
 Then Colour is displayed
+
+@seleniumbaseioportal
+Scenario: Navigate to SeleniumBaseIo portals
+When User is navigated to corresponding portal
+|seleniumbase.com|seleniumbase.io|

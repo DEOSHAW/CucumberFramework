@@ -1,5 +1,7 @@
 package stepDefinition;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -45,6 +47,14 @@ public class SeleniumBaseIoStepDefinition extends BaseStepDefinition
 	{
 		System.out.println("Attribute of the colour: "+colourAttribute);
 	    Assert.assertEquals(colourAttribute, "#4CA0A0");
+	}
+	
+	@When("User is navigated to corresponding portal")
+	public void user_is_navigated_to_corresponding_portal(io.cucumber.datatable.DataTable dataTable) 
+	{
+	    List<List<String>> allLinks=dataTable.asLists(String.class);
+	    driver.findElement(By.linkText(allLinks.get(0).get(0))).click();
+	    Assert.assertTrue(driver.getCurrentUrl().contains(allLinks.get(0).get(0)));
 	}
 
 }
