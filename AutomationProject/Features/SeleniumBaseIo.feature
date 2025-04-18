@@ -18,3 +18,9 @@ Then Colour is displayed
 Scenario: Navigate to SeleniumBaseIo portals
 When User is navigated to corresponding portal
 |seleniumbase.com|seleniumbase.io|
+
+@seleniumbaseiotext
+Scenario: Relative Locator demo
+When User navigates paragraph text
+Then the text is highlighted
+

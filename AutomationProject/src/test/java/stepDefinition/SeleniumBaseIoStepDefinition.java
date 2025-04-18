@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.locators.RelativeLocator;
 import org.testng.Assert;
 
 import io.cucumber.java.en.Given;
@@ -13,6 +14,7 @@ import io.cucumber.java.en.When;
 public class SeleniumBaseIoStepDefinition extends BaseStepDefinition
 {
 	static String colourAttribute;
+	static WebElement paragraphText;
 	
 	@Given("User is on SeleniumBaseIO portal is open")
 	public void user_is_on_selenium_base_io_portal_is_open() 
@@ -56,5 +58,18 @@ public class SeleniumBaseIoStepDefinition extends BaseStepDefinition
 	    driver.findElement(By.linkText(allLinks.get(0).get(0))).click();
 	    Assert.assertTrue(driver.getCurrentUrl().contains(allLinks.get(0).get(0)));
 	}
+	
+	@When("User navigates paragraph text")
+	public void user_navigates_paragraph_text()
+	{
+		paragraphText=driver.findElement(RelativeLocator.with(By.cssSelector("#pText")).toRightOf(By.xpath("//p[text()='Paragraph with Text:']")));
+	}
+	@Then("the text is highlighted")
+	public void the_text_is_highlighted() throws InterruptedException
+	{
+		js.executeScript("arguments[0].setAttribute('style', 'border:2px solid blue; background:Green')", paragraphText);
+		Thread.sleep(3000);
+	}
+
 
 }
