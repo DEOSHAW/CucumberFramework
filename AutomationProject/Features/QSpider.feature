@@ -19,5 +19,10 @@ Scenario: Handle shadow dom
 When User navigates to login page with shadow dom
 And User logs in to portal to login page having shadow dom
 
+@keyboardaction
+Scenario: Keyboard Actions Widget
+When User presses any key on the keyboard
+Then widget identifies the pressed key
+
 
 

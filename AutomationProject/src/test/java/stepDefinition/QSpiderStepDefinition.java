@@ -1,7 +1,11 @@
 package stepDefinition;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.util.Iterator;
 import java.util.Set;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
@@ -89,6 +93,26 @@ public class QSpiderStepDefinition extends BaseStepDefinition
 		Thread.sleep(2000);
 	    
 	}
+	
+	@When("User presses any key on the keyboard")
+	public void user_presses_any_key_on_the_keyboard() throws AWTException 
+	{
+		driver.findElement(By.xpath("(//div[text()='Explore more'])[1]")).click();
+		driver.findElement(By.xpath("//section[text()='Keyboard Actions']")).click();
+		driver.findElement(By.xpath("//section[text()='Keyboard']")).click();
+		driver.findElement(By.xpath("//input[@name='handleInput']")).click();
+	    Robot robot=new Robot();
+	    robot.keyPress(KeyEvent.VK_BACK_SPACE);
+	}
+	@Then("widget identifies the pressed key")
+	public void widget_identifies_the_pressed_key() throws InterruptedException
+	{
+	   String pressedKeyText=driver.findElement(By.xpath("//p[text()='You entered:']/span")).getText();
+	   System.out.println("Pressed Key is: "+pressedKeyText);
+	   Assert.assertTrue(pressedKeyText.equals("Backspace"),"Correct Pressed Key is not shown");
+	   Thread.sleep(3000);
+	}
+
 
 
 
