@@ -24,3 +24,9 @@ Scenario: Relative Locator demo
 When User navigates paragraph text
 Then the text is highlighted
 
+@seleniumbaseiodocs
+Scenario: Navigate to SeleniumBaseIo docs portal
+When User clicks on docks link
+Then user is navigated to below portal
+|SeleniumBase Docs|
+

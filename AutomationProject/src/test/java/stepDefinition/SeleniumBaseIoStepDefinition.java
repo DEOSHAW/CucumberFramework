@@ -70,6 +70,19 @@ public class SeleniumBaseIoStepDefinition extends BaseStepDefinition
 		js.executeScript("arguments[0].setAttribute('style', 'border:2px solid blue; background:Green')", paragraphText);
 		Thread.sleep(3000);
 	}
+	
+	@When("User clicks on docks link")
+	public void user_clicks_on_docks_link() 
+	{
+	    driver.findElement(By.linkText("seleniumbase.io")).click();
+	}
+	@Then("user is navigated to below portal")
+	public void user_is_navigated_to_below_portal(io.cucumber.datatable.DataTable dataTable) 
+	{
+		List<List<String>> dataList=dataTable.asLists(String.class);
+		Assert.assertEquals(driver.getTitle(), dataList.get(0).get(0),"Page title mismatch");
+	    
+	}
 
 
 }
