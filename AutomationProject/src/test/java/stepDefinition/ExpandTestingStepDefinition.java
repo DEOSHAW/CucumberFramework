@@ -14,6 +14,7 @@ import io.cucumber.java.en.When;
 public class ExpandTestingStepDefinition extends BaseStepDefinition
 {
 	static String pageTitle=null;
+	static String mainPageTitle=null;
 	@Given("Expand Testing portal is open")
 	public void expand_testing_portal_is_open()
 	{
@@ -51,6 +52,15 @@ public class ExpandTestingStepDefinition extends BaseStepDefinition
 		Assert.assertEquals(pageTitle, dataList.get(0).get("pageTitle"));
 		
 	    
+	}
+	
+	@When("User gets the page title")
+	public void user_gets_the_page_title() {
+		mainPageTitle=driver.getTitle();
+	}
+	@Then("page title is as expected")
+	public void page_title_is_as_expected() {
+	   Assert.assertEquals(mainPageTitle, "Automation Testing Practice for QA and Developers | UI and API");
 	}
 
 

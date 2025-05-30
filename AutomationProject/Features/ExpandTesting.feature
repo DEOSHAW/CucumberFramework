@@ -16,4 +16,9 @@ Then page title should be below
 |pageTitle|
 |Practice Web UI & API Test Automation WebSite|
 
+@expandTestingPage
+Scenario: Get Page Title
+When User gets the page title
+Then page title is as expected
+
 
