@@ -13,3 +13,9 @@ Given Heroku dynamic content portal is open
 When  User clicks on Second link
 And   User clicks on start button
 Then  the dynamic content is displayed
+
+@herokuframe
+Scenario: Switch to middle frame
+Given Heroku frame page is open
+When user switches to middle frame
+Then middle text is highlighted

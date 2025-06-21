@@ -52,6 +52,28 @@ public class HerokuStepDefinition extends BaseStepDefinition{
 		System.out.println("Dynamically loaded content is: "+text);
 		
 	}
+	
+	@Given("Heroku frame page is open")
+	public void heroku_frame_page_is_open() 
+	{
+	    driver.get("https://the-internet.herokuapp.com/nested_frames");
+	}
+	@When("user switches to middle frame")
+	public void user_switches_to_middle_frame() 
+	{
+	    driver.switchTo().frame(0);
+	    driver.switchTo().frame(1);
+	    
+	}
+	@Then("middle text is highlighted")
+	public void middle_text_is_highlighted() throws InterruptedException
+	{
+		WebElement textElement=driver.findElement(By.cssSelector("div#content"));
+		js.executeScript("arguments[0].setAttribute('style', 'border:2px solid blue; background:Red')", textElement);
+		Thread.sleep(3000);
+	    
+	}
+
 
 
 
