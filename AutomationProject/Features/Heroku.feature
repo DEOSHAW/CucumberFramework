@@ -19,3 +19,8 @@ Scenario: Switch to middle frame
 Given Heroku frame page is open
 When user switches to middle frame
 Then middle text is highlighted
+
+@herokuloginalert
+Scenario: Handle Login Alert
+When User user logs in with basic auth to heroku portal
+Then welcome message is displayed

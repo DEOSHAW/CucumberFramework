@@ -73,12 +73,16 @@ public class HerokuStepDefinition extends BaseStepDefinition{
 		Thread.sleep(3000);
 	    
 	}
-
-
-
-
-
-
-
-
+	
+	@When("User user logs in with basic auth to heroku portal")
+	public void user_user_logs_in_with_basic_auth_to_heroku_portal()
+	{
+	    driver.get("https://admin:admin@the-internet.herokuapp.com/basic_auth");
+	}
+	@Then("welcome message is displayed")
+	public void welcome_message_is_displayed()
+	{
+	  Assert.assertEquals(driver.findElement(By.cssSelector("div.example>p")).getText(), "Congratulations! You must have the proper credentials.");
+	    
+	}
 }
