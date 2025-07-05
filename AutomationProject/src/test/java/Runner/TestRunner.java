@@ -7,7 +7,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
- features = "Features",tags= "@herokuloginalert",
+ features = "Features",tags= "@herokuredirection",
  glue={"stepDefinition","hook"},
  dryRun=false,
  monochrome=true,

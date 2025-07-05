@@ -85,4 +85,20 @@ public class HerokuStepDefinition extends BaseStepDefinition{
 	  Assert.assertEquals(driver.findElement(By.cssSelector("div.example>p")).getText(), "Congratulations! You must have the proper credentials.");
 	    
 	}
+	
+	@Given("User is on Heroku redirection portal")
+	public void user_is_on_heroku_redirection_portal() {
+	    driver.get("https://the-internet.herokuapp.com/redirector");
+	}
+	@When("User clicks on redirection link")
+	public void user_clicks_on_redirection_link() {
+	    driver.findElement(By.xpath("//a[@id='redirect']")).click();
+	}
+	@Then("new page is rendered")
+	public void new_page_is_rendered() {
+	    Assert.assertEquals(driver.getCurrentUrl(),"https://the-internet.herokuapp.com/status_codes");
+	}
+
+
+
 }

@@ -24,3 +24,9 @@ Then middle text is highlighted
 Scenario: Handle Login Alert
 When User user logs in with basic auth to heroku portal
 Then welcome message is displayed
+
+@herokuredirection
+Scenario: Validate Redirect Scenario
+Given User is on Heroku redirection portal
+When User clicks on redirection link
+Then new page is rendered
