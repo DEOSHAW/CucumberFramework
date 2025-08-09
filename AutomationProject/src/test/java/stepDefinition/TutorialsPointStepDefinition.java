@@ -5,12 +5,13 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class TutorialsPointStepDefinition extends BaseStepDefinition
 {
-	@When("Tutorials point slider site is open")
+	@Given("Tutorials point slider site is open")
 	public void tutorials_point_slider_site_is_open()
 	{
 	    driver.get("https://www.tutorialspoint.com/selenium/practice/slider.php");
