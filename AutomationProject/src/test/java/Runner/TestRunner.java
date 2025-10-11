@@ -7,7 +7,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
- features = "Features",tags= "@coursera",
+ features = "Features",tags= "@cosmocodetable",
  glue={"stepDefinition","hook"},
  dryRun=false,
  monochrome=true,
