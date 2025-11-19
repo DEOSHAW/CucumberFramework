@@ -7,7 +7,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
- features = "Features",tags= "@nitto",
+ features = "Features",tags= "@axis",
  glue={"stepDefinition","hook"},
  dryRun=false,
  monochrome=true,
