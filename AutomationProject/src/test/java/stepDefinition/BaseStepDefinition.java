@@ -28,17 +28,18 @@ public class BaseStepDefinition {
 	{
 		   //System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+File.separator+"chromedriver.exe");
 		  ChromeOptions options = new ChromeOptions();
-	      options.addArguments("--remote-allow-origins=*");
-	      options.addArguments("--no-sandbox");
-	      options.addArguments("--disable-dev-shm-usage");
-	      options.addArguments("log-level=2");
-	      //options.addArguments("--headless");
-		   driver=new ChromeDriver(options);
-		   driver.manage().window().maximize();
-		   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		   wait=new WebDriverWait(driver, Duration.ofSeconds(15));
-		   js=(JavascriptExecutor)driver;
-		   actions=new Actions(driver);
+		  //options.addArguments("--headless=new");   // Use new headless mode
+		  //options.addArguments("--window-size=1920,1080"); // Very important
+		  options.addArguments("--remote-allow-origins=*");
+		  options.addArguments("--no-sandbox");
+		  options.addArguments("--disable-dev-shm-usage");
+		  options.addArguments("log-level=2");
+		  driver=new ChromeDriver(options);
+		  driver.manage().window().maximize();
+		  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		  wait=new WebDriverWait(driver, Duration.ofSeconds(15));
+		  js=(JavascriptExecutor)driver;
+		  actions=new Actions(driver);
 		 
 		
 	}
