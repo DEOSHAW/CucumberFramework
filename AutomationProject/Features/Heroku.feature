@@ -30,3 +30,13 @@ Scenario: Validate Redirect Scenario
 Given User is on Heroku redirection portal
 When User clicks on redirection link
 Then new page is rendered
+
+@herokudropdown
+Scenario Outline: Validate dropdown selection
+Given User is on heroku dropdown portal
+When User selects "<option>" on the dropdown portal
+Then the option is selected on heroku portal
+Examples:
+|option|
+|Option 1|
+|Option 2|

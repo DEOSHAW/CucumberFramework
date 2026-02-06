@@ -2,14 +2,17 @@ package stepDefinition;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class HerokuStepDefinition extends BaseStepDefinition{
-	
+public class HerokuStepDefinition extends BaseStepDefinition
+{
+	static String selectedOption;
+	static  Select herokuDropdown;
 	@Given("Heroku portal is open")
 	public void heroku_portal_is_open() {
 	    driver.get("https://the-internet.herokuapp.com/");
@@ -97,6 +100,28 @@ public class HerokuStepDefinition extends BaseStepDefinition{
 	@Then("new page is rendered")
 	public void new_page_is_rendered() {
 	    Assert.assertEquals(driver.getCurrentUrl(),"https://the-internet.herokuapp.com/status_codes");
+	}
+	
+	@Given("User is on heroku dropdown portal")
+	public void user_is_on_heroku_dropdown_portal()
+	{
+	    driver.get("https://the-internet.herokuapp.com/dropdown");
+	}
+	@When("User selects {string} on the dropdown portal")
+	public void user_selects_on_the_dropdown_portal(String option)
+	{
+	    WebElement dropdownElement=driver.findElement(By.cssSelector("select#dropdown"));
+	    herokuDropdown=new Select(dropdownElement);
+	    herokuDropdown.selectByVisibleText(option);
+	    selectedOption=option;
+	    
+	}
+	@Then("the option is selected on heroku portal")
+	public void the_option_is_selected_on_heroku_portal() 
+	{
+		String selectedOpt=herokuDropdown.getFirstSelectedOption().getText();
+		System.out.println("Selected option is: "+selectedOpt);
+		Assert.assertEquals(selectedOpt, selectedOption);
 	}
 
 

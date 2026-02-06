@@ -7,7 +7,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
- features = "Features",tags= "@uoa",
+ features = "Features",tags= "@herokudropdown",
  glue={"stepDefinition","hook"},
  dryRun=false,
  monochrome=true,
