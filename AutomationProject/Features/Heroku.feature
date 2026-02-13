@@ -40,3 +40,9 @@ Examples:
 |option|
 |Option 1|
 |Option 2|
+
+@herokuAlert
+Scenario: Validate Heroku Alert
+Given User is on Heroku Alert portal
+When User clicks on alert button on Heroku alert portal
+Then success alert handling message is displayed on Heroku alert portal
