@@ -7,7 +7,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
- features = "Features",tags= "@annauniversity",
+ features = "Features",tags= "@mastersgolf",
  glue={"stepDefinition","hook"},
  dryRun=false,
  monochrome=true,
