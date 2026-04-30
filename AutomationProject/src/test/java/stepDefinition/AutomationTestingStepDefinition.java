@@ -30,6 +30,22 @@ public class AutomationTestingStepDefinition extends BaseStepDefinition
 	    List<List<String>> menuOptions=dataTable.asLists(String.class);
 	    Assert.assertEquals(allMenuOptions.get(3).getText(), menuOptions.get(0).get(1));
 	}
+	
+	@Given("User navigates to accordion page on Automation Testing portal")
+	public void user_navigates_to_accordion_page_on_automation_testing_portal() 
+	{
+	    driver.findElement(By.xpath("//a[text()='Accordion']")).click();
+	    String pageHeader=driver.findElement(By.cssSelector("h2#content")).getText();
+	    Assert.assertEquals(pageHeader, "Accordion Test");
+	}
+	
+	@Then("below accordion title is present {string}")
+	public void below_accordion_title_is_present(String accordionTitle)
+	{
+	    boolean accordionPresent=driver.findElement(By.xpath("//div[text()='"+accordionTitle+"']")).isDisplayed();
+	    Assert.assertTrue(accordionPresent,accordionTitle+" is not present");
+	}
+	
 
 
 }

@@ -7,7 +7,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
- features = "Features",tags= "@automationtesting",
+ features = "Features",tags= "@automationtestingMenu or @automationtestingAccordion",
  glue={"stepDefinition","hook"},
  dryRun=false,
  monochrome=true,
