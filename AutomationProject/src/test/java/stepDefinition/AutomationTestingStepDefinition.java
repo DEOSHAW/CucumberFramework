@@ -46,6 +46,24 @@ public class AutomationTestingStepDefinition extends BaseStepDefinition
 	    Assert.assertTrue(accordionPresent,accordionTitle+" is not present");
 	}
 	
-
-
+	@When("user navigates to Actions page")
+	public void user_navigates_to_actions_page() 
+	{
+	    driver.get("https://www.automationtesting.co.uk/actions.html");
+	}
+	@When("user performs the drag and drop action")
+	public void user_performs_the_drag_and_drop_action() throws InterruptedException 
+	{
+		WebElement draggable=driver.findElement(By.cssSelector("p#dragtarget"));
+		WebElement dropTarget = driver.findElement(By.xpath("(//div[@class='droptarget'])[2]"));
+	    actions.dragAndDrop(draggable, dropTarget).perform();
+	    Thread.sleep(3000);
+	}
+	@Then("success message for drag and drop is displayed")
+	public void success_message_for_drag_and_drop_is_displayed() 
+	{
+		String successMsg=driver.findElement(By.cssSelector("p#demo")).getText();
+		Assert.assertEquals(successMsg, "The p element was dropped into an accepted rectangle");
+	    
+	}
 }

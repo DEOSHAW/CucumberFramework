@@ -21,3 +21,9 @@ Examples:
 |Platform Portability|
 |Language Support|
 |Selenium Grid|
+
+@automationtestingDragAndDrop
+Scenario: Validate Drag and Drop Action
+When user navigates to Actions page
+And user performs the drag and drop action
+Then success message for drag and drop is displayed
