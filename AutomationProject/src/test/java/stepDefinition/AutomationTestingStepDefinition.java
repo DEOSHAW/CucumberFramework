@@ -66,4 +66,24 @@ public class AutomationTestingStepDefinition extends BaseStepDefinition
 		Assert.assertEquals(successMsg, "The p element was dropped into an accepted rectangle");
 	    
 	}
+	
+	@When("user navigates to Date picker page")
+	public void user_navigates_to_date_picker_page() 
+	{
+	    driver.findElement(By.xpath("//a[text()='Date Picker']")).click();
+	}
+	@When("user selects the date on date picker")
+	public void user_selects_the_date_on_date_picker() throws InterruptedException
+	{
+	    driver.findElement(By.cssSelector("input#rangeDate")).click();
+	    Thread.sleep(1000);
+	}
+	@Then("the date is selected on date picker")
+	public void the_date_is_selected_on_date_picker() throws InterruptedException 
+	{
+	    driver.findElement(By.xpath("(//span[@class='flatpickr-day today'])[2]")).click();
+	    Thread.sleep(1000);
+	    driver.findElement(By.xpath("(//span[contains(@class,'flatpickr-day today')])[2]/following-sibling::span[1]")).click();
+	    Thread.sleep(3000);
+	}
 }
