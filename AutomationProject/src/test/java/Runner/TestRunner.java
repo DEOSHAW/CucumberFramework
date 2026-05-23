@@ -7,7 +7,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
- features = "Features",tags= "@automationtestingDatePicker",
+ features = "Features",tags= "@automationBrowserTab",
  glue={"stepDefinition","hook"},
  dryRun=false,
  monochrome=true,

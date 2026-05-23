@@ -33,3 +33,9 @@ Scenario: Validate Date Picker
 When user navigates to Date picker page
 And user selects the date on date picker
 Then the date is selected on date picker
+
+@automationBrowserTab
+Scenario: Validate new Browser tab
+When user navigates to browser tabs page
+And user clicks on open tab link
+Then the new tab gets opened

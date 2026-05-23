@@ -1,6 +1,8 @@
 package stepDefinition;
 
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -86,4 +88,34 @@ public class AutomationTestingStepDefinition extends BaseStepDefinition
 	    driver.findElement(By.xpath("(//span[contains(@class,'flatpickr-day today')])[2]/following-sibling::span[1]")).click();
 	    Thread.sleep(3000);
 	}
+	
+	@When("user navigates to browser tabs page")
+	public void user_navigates_to_browser_tabs_page() 
+	{
+	    driver.findElement(By.xpath("//a[text()='Browser Tabs']")).click();
+	}
+	@When("user clicks on open tab link")
+	public void user_clicks_on_open_tab_link() {
+	    driver.findElement(By.xpath("//input[@value='Open Tab']")).click();
+	}
+	@Then("the new tab gets opened")
+	public void the_new_tab_gets_opened() {
+	    String parentWin=driver.getWindowHandle();
+	    Set<String> allWindows=driver.getWindowHandles();
+	    Iterator<String> itr=allWindows.iterator();
+	    String currentWin=null;
+	    while(itr.hasNext())
+	    {
+	    	currentWin=itr.next();
+	    	if(!parentWin.equalsIgnoreCase(currentWin))
+	    	{
+	    		driver.switchTo().window(currentWin);
+	    		break;
+	    	}
+	    }
+	    
+	    Assert.assertEquals(driver.getTitle(), "Google");
+	    
+	}
+
 }
