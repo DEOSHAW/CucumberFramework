@@ -4,8 +4,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.locators.RelativeLocator;
 import org.testng.Assert;
 
 import io.cucumber.java.en.Given;
@@ -116,6 +118,31 @@ public class AutomationTestingStepDefinition extends BaseStepDefinition
 	    
 	    Assert.assertEquals(driver.getTitle(), "Google");
 	    
+	}
+	
+	@When("user navigates to login page on AutomationTesting portal")
+	public void user_navigates_to_login_page_on_automation_testing_portal() 
+	{
+	    WebElement loginPortalLink=driver.findElement(RelativeLocator.with(By.xpath("//a[text()='Login Portal Test']")).below(By.xpath("//a[text()='Loader Two']")));
+	    js.executeScript("arguments[0].scrollIntoView();", loginPortalLink);
+	    loginPortalLink.click();
+	}
+	@When("user enter below credentials on AutomationTesting portal login page")
+	public void user_enter_below_credentials_on_automation_testing_portal_login_page(io.cucumber.datatable.DataTable dataTable) 
+	{
+		List<List<String>> dataList=dataTable.asLists(String.class);
+		driver.findElement(By.xpath("//input[@placeholder='Username']")).sendKeys(dataList.get(0).get(0));
+		driver.findElement(By.xpath("//input[@placeholder='Password']")).sendKeys(dataList.get(0).get(1));
+		driver.findElement(By.id("login_btn")).click();
+	    
+	}
+	@Then("the login is successful on AutomationTesting portal")
+	public void the_login_is_successful_on_automation_testing_portal() throws InterruptedException 
+	{
+	   Alert successAlert= driver.switchTo().alert();
+	   Assert.assertEquals(successAlert.getText(), "validation succeeded");
+	   Thread.sleep(1000);
+	   successAlert.accept();
 	}
 
 }

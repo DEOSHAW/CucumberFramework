@@ -39,3 +39,10 @@ Scenario: Validate new Browser tab
 When user navigates to browser tabs page
 And user clicks on open tab link
 Then the new tab gets opened
+
+@automationLogin
+Scenario: Validate login
+When user navigates to login page on AutomationTesting portal
+And user enter below credentials on AutomationTesting portal login page
+|test|test123|
+Then the login is successful on AutomationTesting portal
