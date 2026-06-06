@@ -46,3 +46,10 @@ When user navigates to login page on AutomationTesting portal
 And user enter below credentials on AutomationTesting portal login page
 |test|test123|
 Then the login is successful on AutomationTesting portal
+
+@automationAboutMe
+Scenario: Validate about me
+When user navigates to about me page on AutomationTesting portal
+Then the about me information is displayed on AutomationTesting portal
+
+

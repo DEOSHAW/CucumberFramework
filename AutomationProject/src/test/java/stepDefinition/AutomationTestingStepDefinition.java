@@ -144,5 +144,18 @@ public class AutomationTestingStepDefinition extends BaseStepDefinition
 	   Thread.sleep(1000);
 	   successAlert.accept();
 	}
+	
+	@When("user navigates to about me page on AutomationTesting portal")
+	public void user_navigates_to_about_me_page_on_automation_testing_portal()
+	{
+	  WebElement aboutMeLink=driver.findElement(By.xpath("//a[text()='About Me']")); 
+	  js.executeScript("arguments[0].scrollIntoView();", aboutMeLink);
+	  aboutMeLink.click();
+	}
+	@Then("the about me information is displayed on AutomationTesting portal")
+	public void the_about_me_information_is_displayed_on_automation_testing_portal() 
+	{
+	    Assert.assertEquals("Our background, interests and goals.", driver.findElement(By.cssSelector("div.content>h2+h4")).getText());
+	}
 
 }
