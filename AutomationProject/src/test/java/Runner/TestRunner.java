@@ -1,19 +1,19 @@
 package Runner;
 
-import org.junit.runner.RunWith;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
 
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
-
-@RunWith(Cucumber.class)
 @CucumberOptions(
- features = "Features",tags= "@nirf",
- glue={"stepDefinition","hook"},
- dryRun=false,
- monochrome=true,
- plugin = { "pretty", "html:target/cucumber-reports","json:target/cucumber.json","rerun:Features/rerun.txt" }
- )
-public class TestRunner 
-{
-			
+    features = "src/test/resources/features",
+    glue = {"stepDefinition", "hook"},
+    tags = "@abs",
+    plugin = {
+        "pretty",
+        "json:target/cucumber-report/cucumber.json",   // ✅ safer subfolder
+        "html:target/cucumber-html-report"
+    },
+    monochrome = true
+)
+public class TestRunner extends AbstractTestNGCucumberTests {
+    // no extra code needed, TestNG + Cucumber handles execution
 }
