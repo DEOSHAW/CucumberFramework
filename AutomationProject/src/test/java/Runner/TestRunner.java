@@ -8,7 +8,8 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
     features = "src/test/resources/features",
     glue = {"stepDefinition", "hook"},
-    tags = "@abs or @icai",
+    tags = "@nagpuruniversity",
+    dryRun = false,
     plugin = {
         "pretty",
         "json:target/cucumber.json",   // ✅ safer subfolder
