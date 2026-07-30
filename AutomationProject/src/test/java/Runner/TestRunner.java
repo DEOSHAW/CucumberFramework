@@ -8,12 +8,13 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
     features = "src/test/resources/features",
     glue = {"stepDefinition", "hook"},
-    tags = "@iiae",
+    tags = "@tigeranalytics",
     dryRun = false,
     plugin = {
         "pretty",
         "json:target/cucumber.json",   // ✅ safer subfolder
-        "html:target/cucumber-html-reports.html"
+        "html:target/cucumber-html-reports.html",
+        "rerun:target/failed_scenarios.txt"
     },
     monochrome = true,
     publish = true
