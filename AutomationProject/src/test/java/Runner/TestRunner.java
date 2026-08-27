@@ -8,7 +8,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
     features = "src/test/resources/features",
     glue = {"stepDefinition", "hook"},
-    tags = "@etpl",
+    tags = "@pfizer",
     dryRun = false,
     plugin = {
         "pretty",
