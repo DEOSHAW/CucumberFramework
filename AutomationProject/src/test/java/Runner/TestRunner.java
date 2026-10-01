@@ -8,7 +8,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
     features = "src/test/resources/features",
     glue = {"stepDefinition", "hook"},
-    tags = "@iiest",
+    tags = "@asiangames",
     dryRun = false,
     plugin = {
         "pretty",
